@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Mulish:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="stylePage2.css">
+        <title>Сравнение Python и Pascal - PythonLand</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-logo">
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="nav">
+                        <div class="nav-dropdown">
+                            <a class="nav-link" href ='#'>Особенности</a>
+                            <div class="nav-link-content">
+                            <a href="#">Сравнение Python и Pascal</a>
+                            </div>
+                        </div>
+                        <a class="nav-link" href ='#'>Обучение</a>
+                        <a class="nav-link" href ='#'>Категории</a> 
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="intro">
+            <div class="container">
+                <div class="intro-inner">
+                    <h1 class="intro-title">Сравнение Python и Pascal</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="container">
+            <div class="content">
+                <p>Сейчас Python становится очень популярным языком программирования среди школьников, так или иначе интересующихся информатикой.</p>
+                <p>Однако в школьной программе информатики этому языку программирования уделяют очень мало времени, может даже вообще к нему не прикасаются - всё время уходит на Pascal, основой практически всех языков программирования. В этот статье мы сравним оба этих языка и узнаем, какой язык лучше и в каких аспектах.</p>
+                <p class="italic">Примечание. Особо углубляться в сравнение языков, к примеру сравнивать принцип ввода и циклов, мы не будем, это тема для углублённого обучения</p>
+                <p class="headerjn" style="font-size: 36px;">Синтаксис</p>
+                <p>Очевидно, что Python выходит вперёд - его до лёгкости простой синтаксис является новинкой в мире программирования. А необходимость в оступах делает код чище и понятнее.</p>
+                <p>Однако требования Pascal к использованию <code>begin...end</code> обучает новичков блочной структуре кода, которая существует в большинстве языках (например <code>{...}</code> в С и Java</p>
+                <p class="coding tabled">
+                    <c>#Python</c>
+                    <br><n>import</n> math <c>#библиотека для корня</c>
+                    <br>a = <n>int</n>(<n>input</n>())
+                    <br>s = a*a
+                    <br>p = <n>4</n>*a
+                    <br>d = math.sqrt(<n>2</n>)*a
+                    <br><n>print</n>(s, p, d)
+                </p>
+                <p class="coding tabled">
+                    <c>//Pascal</c>
+                    <br><t>var</t> a, s, p, d: <c>real</c>;
+                    <br><t>begin</t>
+                    <br>read(a);
+                    <br>s := a*a;
+                    <br>p := 4*a;
+                    <br>d := sqrt(2)*a;
+                    <br>print(s, p, d);
+                    <br><t>end.</t>
+                </p>
+                <p class="italic">Обратите внимание, что в языке PascalABC.NET (где и обучаются большинство российских школ) можно писать и в питоновском формате, начиная код с двух решёток <code>##</code></p>
+                <p class="headerjn" style="font-size: 36px;">Скорость выполнения программ</p>
+                <p>Тут конечно Python не фаворит. В сравнении с Pascal, Python выполняет программы в 50, 100 раз медленнее, чем его опонент. Проверим же это на практике.</p>
+                <p>Ниже будут приведены примеры одиннаковых программ, ищущих количество простых чисел в диапазоне от 2 до 100 000</p>
+                <pre class="coding">
+<c>#Python</c>
+<n>import</n> time
+count = <n>0</n>
+start = time.time() <c>#Записываем текущее время</c>
+<n><t>for</t></n> i <n><t>in</t></n> <n>range</n>(2, 100000):
+flag = <n>True</n>
+<n><t>for</t></n> n <n><t>in</t></n> <n>range</n>(2, i):
+    flag = i % n != <n>0</n>
+    <n><t>if</t></n> <n>not</n> flag:
+        <n>break</n>
+    <n><t>if</t></n> flag:
+        count += <n>1</n>
+<n>print</n>(count, time.time - start) <c>#Выводим количество чисел
+и время работы программы</c>
+<c><t>#Вывод: 9592 36.37482666969299</t></c>         
+                </pre>
+                <pre class="coding">
+<c>//Pascal</c>
+<t>var</t>
+    i, n, count : <c>integer</c>;
+    Flag : <c>boolean</c>;
+<t>begin</t>
+    <t>for</t> i := <n>2</n> <t>to</t> <n>100000</n> <t>do begin</t>
+        Flag := <c>True</c>;
+            <t>for</t> n := <c>2</c> <t>to</t> i-<c>1</c> do begin
+                Flag := i <t>mod</t> n <> <n>0</n>;
+                <t>if not</t> Flag <t>then</t>
+                    <t>break</t>;
+            <t>end;</t>
+        <t>if</t> Flag <t>then</t>
+            count := count + <n>1</n>;
+    <t>end;</t>
+print(count, Milliseconds/<n>1000</n>); <c>//Выводим количество чисел 
+и время работы программы</c>
+<t>end.</t>
+<c><t>//Вывод: 9592 1.736</t></c>     
+                </pre>
+                <p>Судя по временам работы обеих программ, Pascal быстрее Python в 20,95 раз! Поэтому Python не используется часто в сложных и больших задачах, так как время работы может затянуться на минуты.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p class="footer-text">
+                    Этот сайт создан в образовательных целях. Вся информация была взята из сайта <a href="https://pythonworld.ru" class="footer-href">https://pythonworld.ru</a> и принадлежит его владельцу.</p>
+                <p class="footer-text">
+                    Icons by <a href="https://www.flaticon.com/authors/srip" class="footer-href"> srip.</a>
+                    <br>Site by <a href="https://vk.com/average_sucrose_enjoyer" class="footer-href"> Alexey “Jiene_” Yanchuk</a></br>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

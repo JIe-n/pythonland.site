@@ -144,14 +144,42 @@ code {
 
 .coding {
     font-family: 'Courier Prime', monospace;
+    font-weight: 100;
+    font-size: 20px;
+    color: black;
     padding: 10px;
-    width: 100%;
     background-color: #fffecc;
     margin: 30px 0px;
 }
 
+.tabled {
+    width: 47%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 30px 0px;
+    margin-right: 1.5%;
+}
+
+.coding c {
+    color: #0009bf;
+}
+
 .coding n {
     color: #18a438;
+}
+
+.coding t {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.headerjn {
+    font-weight: bold;
+    text-align: center;
+    margin: 30px auto 20px;
 }
 
 /*! =============== OUTRO ===============*/
